@@ -55,6 +55,7 @@ public:
 			}
 			cout<<endl;
 		}
+		cout << endl;
 	}
 	//Méthode: drawPerimeter(const char& pattern) --> Dessine le périmétre du rectangle avec le caractère passé en paramètre
 	void drawPerimeter(const char& pattern) {
@@ -72,6 +73,7 @@ public:
 			}
 			cout << endl;
 		}
+		cout << endl;
 	}
 };
 
