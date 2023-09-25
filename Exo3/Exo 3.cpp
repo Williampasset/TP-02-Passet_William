@@ -3,41 +3,45 @@
 #include <sstream>
 #include <string>
 
+using namespace std;
+
 int main(void) {
-	 std::ofstream myfile;
+	//Ecriture d'un fichier texte créer en C++
+	 ofstream myfile;
 	 myfile.open("test.txt");
 	 if (myfile.is_open()) {
-		 myfile << "Hello World";
+		 myfile << "Hello worldh";
 		 myfile.close();
 	 }
 	 else {
-		 std::cout << "Problème dans l'écriture du fichier" << std::endl;
+		 cout << "Problème dans l'écriture du fichier" << endl;
 	 }
-	 std::ifstream myfileread;
+	 //Lecture de ce fichier texte
+	 ifstream myfileread;
 	 myfileread.open("test.txt");;
 	 if (myfileread.is_open()) {
 		 int nbmot = 0;
 		 int nbligne = 0;
 		 int nblettre = 0;
 
-		 std::string ligne;
-		 while (std::getline(myfileread, ligne)) {
+		 string ligne;
+		 while (getline(myfileread, ligne)) {
 			 nbligne++;
 
-			 std::stringstream buffer(ligne);
-			 std::string mot;
+			 stringstream buffer(ligne);
+			 string mot;
 			 while (buffer >> mot) {
 				 nbmot++;
 				 nblettre += (int)mot.size();
 			 }
 		 }
 		 myfileread.close();
-		 std::cout << "Nombre de ligne: " << nbligne << std::endl;
-		 std::cout << "Nombre de mot: " << nbmot << std::endl;
-		 std::cout << "Nombre de lettre: " << nblettre << std::endl;
+		 cout << "Nombre de ligne: " << nbligne << endl;
+		 cout << "Nombre de mot: " << nbmot << endl;
+		 cout << "Nombre de lettre: " << nblettre << endl;
 	 }
 	 else {
-		 std::cout << "problème dans la lecture du fichier" << std::endl;
+		 cout << "Problème dans la lecture du fichier" << endl;
 	 }
 
 	 return 0;
